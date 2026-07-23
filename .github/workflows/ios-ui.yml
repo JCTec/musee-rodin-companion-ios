@@ -48,7 +48,7 @@ jobs:
 
       - name: Upload UI-test diagnostics
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ui-test-diagnostics
           path: artifacts/ui-tests
@@ -69,7 +69,7 @@ jobs:
         run: tools/capture_screenshots.sh "$SCREENSHOT_OUTPUT"
 
       - name: Upload screenshot artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: manual-screenshots
           path: artifacts/screenshots/manual

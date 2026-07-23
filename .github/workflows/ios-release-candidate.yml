@@ -63,7 +63,7 @@ jobs:
 
       - name: Upload release-candidate artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-candidate-${{ inputs.configuration }}-simulator
           path: artifacts/release-candidate
@@ -85,7 +85,7 @@ jobs:
         run: tools/capture_screenshots.sh "$SCREENSHOT_OUTPUT"
 
       - name: Upload screenshot artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-candidate-screenshots
           path: artifacts/screenshots/release-candidate
