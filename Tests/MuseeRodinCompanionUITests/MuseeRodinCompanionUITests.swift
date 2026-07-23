@@ -122,9 +122,9 @@ final class MuseeRodinCompanionUITests: XCTestCase {
             .openFirstWork()
             .assertA11yReady()
 
-        PlaceholderPanelRobot(app: app)
-            .assertVisible(label: "personal photo or rights-cleared image")
-            .assertA11yReady(label: "personal photo or rights-cleared image")
+        WorkArtworkImageRobot(app: app)
+            .assertVisible(id: "work-le-penseur")
+            .assertA11yReady(id: "work-le-penseur")
         ConfidenceChipRobot(app: app)
             .assertVisible(label: "Verified")
             .assertA11yReady(label: "Verified")

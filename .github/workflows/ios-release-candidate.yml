@@ -1,0 +1,93 @@
+name: iOS Release Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      configuration:
+        description: Build configuration for the unsigned simulator app.
+        type: choice
+        options:
+          - Release
+          - Debug
+        default: Release
+        required: true
+      include_screenshots:
+        description: Also run the screenshot capture script. Manual only.
+        type: boolean
+        default: false
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  simulator-app:
+    name: simulator-app
+    runs-on: macos-26
+    env:
+      CONFIGURATION: ${{ inputs.configuration }}
+      DERIVED_DATA_PATH: build/DerivedData
+      ARTIFACT_ROOT: artifacts/release-candidate
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build unsigned simulator app
+        run: |
+          mkdir -p "$ARTIFACT_ROOT/logs"
+          rm -rf "$ARTIFACT_ROOT/build.xcresult"
+          set -o pipefail
+          xcodebuild \
+            -project MuseeRodinCompanion.xcodeproj \
+            -scheme MuseeRodinCompanion \
+            -configuration "$CONFIGURATION" \
+            -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath "$DERIVED_DATA_PATH" \
+            -resultBundlePath "$ARTIFACT_ROOT/build.xcresult" \
+            CODE_SIGNING_ALLOWED=NO \
+            build | tee "$ARTIFACT_ROOT/logs/xcodebuild-release-candidate.log"
+
+      - name: Package simulator app
+        run: |
+          app_path="$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphonesimulator/MuseeRodinCompanion.app"
+          test -d "$app_path"
+          rm -f "$ARTIFACT_ROOT/MuseeRodinCompanion-${CONFIGURATION}-simulator-app.zip"
+          ditto -c -k --keepParent "$app_path" "$ARTIFACT_ROOT/MuseeRodinCompanion-${CONFIGURATION}-simulator-app.zip"
+
+      - name: Upload release-candidate artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate-${{ inputs.configuration }}-simulator
+          path: artifacts/release-candidate
+          if-no-files-found: warn
+          retention-days: 14
+
+  screenshots:
+    name: screenshots
+    if: ${{ inputs.include_screenshots }}
+    needs: simulator-app
+    runs-on: macos-26
+    env:
+      SCREENSHOT_OUTPUT: artifacts/screenshots/release-candidate
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Capture screenshots
+        run: tools/capture_screenshots.sh "$SCREENSHOT_OUTPUT"
+
+      - name: Upload screenshot artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate-screenshots
+          path: artifacts/screenshots/release-candidate
+          if-no-files-found: error
+          retention-days: 14

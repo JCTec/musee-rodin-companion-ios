@@ -1,0 +1,44 @@
+name: Content or asset change
+description: Request changes to bundled JSON content, sources, artwork images, or screenshots.
+title: "[Content/Asset]: "
+labels:
+  - content
+body:
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change type
+      options:
+        - Work or topic content
+        - Route or audio stop content
+        - Source or citation
+        - Artwork image asset
+        - Screenshot artifact
+    validations:
+      required: true
+  - type: textarea
+    id: item
+    attributes:
+      label: Affected item
+      description: Include IDs such as work-le-penseur, topic-garden, or source labels.
+    validations:
+      required: true
+  - type: textarea
+    id: requested_change
+    attributes:
+      label: Requested change
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source or provenance
+      description: Link to official pages, local manifests, or other evidence.
+  - type: checkboxes
+    id: validation
+    attributes:
+      label: Validation reminders
+      options:
+        - label: Content JSON should pass `tools/validate_content.py`.
+        - label: Artwork images should remain rights-reviewed and recorded in the asset manifest.
+        - label: Screenshot updates should be generated manually.

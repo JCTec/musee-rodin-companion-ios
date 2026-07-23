@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a crash, broken flow, rendering issue, or regression.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the tab, screen, route, work, or content item involved.
+      placeholder: |
+        1. Open ...
+        2. Tap ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Device/simulator, iOS version, Xcode version"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots, logs, or artifacts
+      description: Link to CI artifacts or attach screenshots if useful.

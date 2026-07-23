@@ -1,0 +1,82 @@
+name: iOS CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  content:
+    name: content
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Validate bundled content
+        run: python3 tools/validate_content.py MuseeRodinCompanion/Resources/Content
+
+  project:
+    name: project
+    runs-on: macos-26
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Verify generated Xcode project is current
+        run: |
+          xcodegen --spec project.yml --quiet
+          git diff --exit-code -- MuseeRodinCompanion.xcodeproj
+
+  build-and-unit-tests:
+    name: build-and-unit-tests
+    runs-on: macos-26
+    env:
+      DERIVED_DATA_PATH: build/DerivedData
+      DESTINATION: platform=iOS Simulator,name=iPhone 17 Pro,OS=latest
+      RESULT_BUNDLE_PATH: artifacts/unit-tests/MuseeRodinCompanionTests.xcresult
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Run unit tests
+        run: |
+          mkdir -p artifacts/unit-tests
+          rm -rf "$RESULT_BUNDLE_PATH"
+          set -o pipefail
+          xcodebuild \
+            -project MuseeRodinCompanion.xcodeproj \
+            -scheme MuseeRodinCompanion \
+            -destination "$DESTINATION" \
+            -derivedDataPath "$DERIVED_DATA_PATH" \
+            -resultBundlePath "$RESULT_BUNDLE_PATH" \
+            -only-testing:MuseeRodinCompanionTests \
+            CODE_SIGNING_ALLOWED=NO \
+            test | tee artifacts/unit-tests/xcodebuild-unit-tests.log
+
+      - name: Upload unit-test diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-diagnostics
+          path: artifacts/unit-tests
+          if-no-files-found: warn
+          retention-days: 14

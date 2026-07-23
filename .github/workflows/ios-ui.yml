@@ -1,0 +1,77 @@
+name: iOS UI Checks
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_screenshots:
+        description: Run screenshot capture after UI tests. Manual only.
+        type: boolean
+        default: false
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ui-tests:
+    name: ui-tests
+    runs-on: macos-26
+    env:
+      DERIVED_DATA_PATH: build/DerivedData
+      DESTINATION: platform=iOS Simulator,name=iPhone 17 Pro,OS=latest
+      RESULT_BUNDLE_PATH: artifacts/ui-tests/MuseeRodinCompanionUITests.xcresult
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Run UI tests
+        run: |
+          mkdir -p artifacts/ui-tests
+          rm -rf "$RESULT_BUNDLE_PATH"
+          set -o pipefail
+          xcodebuild \
+            -project MuseeRodinCompanion.xcodeproj \
+            -scheme MuseeRodinCompanion \
+            -destination "$DESTINATION" \
+            -derivedDataPath "$DERIVED_DATA_PATH" \
+            -resultBundlePath "$RESULT_BUNDLE_PATH" \
+            -only-testing:MuseeRodinCompanionUITests/MuseeRodinCompanionUITests \
+            CODE_SIGNING_ALLOWED=NO \
+            test | tee artifacts/ui-tests/xcodebuild-ui-tests.log
+
+      - name: Upload UI-test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-diagnostics
+          path: artifacts/ui-tests
+          if-no-files-found: warn
+          retention-days: 7
+
+  screenshots:
+    name: screenshots
+    if: ${{ inputs.run_screenshots }}
+    runs-on: macos-26
+    env:
+      SCREENSHOT_OUTPUT: artifacts/screenshots/manual
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Capture screenshots
+        run: tools/capture_screenshots.sh "$SCREENSHOT_OUTPUT"
+
+      - name: Upload screenshot artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manual-screenshots
+          path: artifacts/screenshots/manual
+          if-no-files-found: error
+          retention-days: 7

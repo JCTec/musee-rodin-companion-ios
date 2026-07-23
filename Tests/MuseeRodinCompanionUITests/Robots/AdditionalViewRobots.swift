@@ -28,6 +28,22 @@ final class PlaceholderPanelRobot: BaseRobot {
     }
 }
 
+final class WorkArtworkImageRobot: BaseRobot {
+    @discardableResult
+    func assertVisible(id: String) -> Self {
+        XCTAssertTrue(app.descendants(matching: .any)["work.image.\(id)"].waitForExistence(timeout: 5))
+        return self
+    }
+
+    @discardableResult
+    func assertA11yReady(id: String) -> Self {
+        let image = app.descendants(matching: .any)["work.image.\(id)"]
+        XCTAssertTrue(image.exists)
+        XCTAssertFalse(image.label.isEmpty)
+        return self
+    }
+}
+
 final class CitationChipRobot: BaseRobot {
     @discardableResult
     func assertVisible(id: String) -> Self {

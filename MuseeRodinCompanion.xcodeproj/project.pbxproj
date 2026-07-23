@@ -367,6 +367,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					49DC8DFB96BE17C95238555A = {
+						DevelopmentTeam = S8662L649U;
+					};
 					BFF06135A3E8B23FF904D527 = {
 						TestTargetID = 49DC8DFB96BE17C95238555A;
 					};
@@ -503,6 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = S8662L649U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MuseeRodinCompanion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -613,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = S8662L649U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MuseeRodinCompanion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

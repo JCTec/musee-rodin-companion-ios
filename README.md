@@ -1,5 +1,8 @@
 # Musee Rodin Companion
 
+[![iOS CI](https://github.com/JCTec/musee-rodin-companion-ios/actions/workflows/ios-ci.yml/badge.svg)](https://github.com/JCTec/musee-rodin-companion-ios/actions/workflows/ios-ci.yml)
+[![CodeQL](https://github.com/JCTec/musee-rodin-companion-ios/actions/workflows/codeql.yml/badge.svg)](https://github.com/JCTec/musee-rodin-companion-ios/actions/workflows/codeql.yml)
+
 Personal iOS/iPadOS companion app for exploring Musée Rodin places, works, symbolic paths, search, and notes.
 
 ## Project
@@ -31,3 +34,8 @@ Capture screenshots:
 tools/capture_screenshots.sh
 ```
 
+## CI/CD
+
+GitHub Actions provide fast required CI, manual release-candidate artifacts, manual UI/screenshot checks, and CodeQL scanning. Screenshot capture is never scheduled or run automatically; trigger it manually when screenshots are intentionally needed.
+
+See [docs/ci-cd.md](docs/ci-cd.md) for workflow details, branch protection recommendations, and future TestFlight prerequisites.

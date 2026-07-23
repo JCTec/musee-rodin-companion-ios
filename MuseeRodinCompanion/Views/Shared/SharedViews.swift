@@ -1,5 +1,6 @@
 import AVFoundation
 import SwiftUI
+import UIKit
 
 struct PlaceholderPanel: View {
     var symbol: String
@@ -23,6 +24,78 @@ struct PlaceholderPanel: View {
         .frame(maxWidth: .infinity)
         .frame(height: 150)
         .accessibilityLabel(label)
+    }
+}
+
+enum WorkArtworkStyle {
+    case thumbnail
+    case hero
+}
+
+struct WorkArtworkImage: View {
+    @EnvironmentObject private var contentStore: AppContentStore
+    var work: Work
+    var style: WorkArtworkStyle
+
+    var body: some View {
+        switch style {
+        case .thumbnail:
+            thumbnail
+        case .hero:
+            hero
+        }
+    }
+
+    @ViewBuilder
+    private var thumbnail: some View {
+        if hasAsset {
+            Image(work.id)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 48, height: 48)
+                .clipShape(RoundedRectangle(cornerRadius: CornerRadiusToken.small, style: .continuous))
+                .accessibilityHidden(true)
+        } else {
+            RoundedRectangle(cornerRadius: CornerRadiusToken.small, style: .continuous)
+                .fill(AppColor.bronze.opacity(0.18))
+                .frame(width: 48, height: 48)
+                .overlay {
+                    Image(systemName: work.placeholderSymbol)
+                        .foregroundStyle(AppColor.bronze)
+                }
+                .accessibilityHidden(true)
+        }
+    }
+
+    @ViewBuilder
+    private var hero: some View {
+        if hasAsset {
+            ZStack {
+                RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous)
+                    .fill(AppColor.card)
+                Image(work.id)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(Spacing.small)
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 300)
+            .clipShape(RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous))
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityIdentifier("work.image.\(work.id)")
+        } else {
+            PlaceholderPanel(symbol: work.placeholderSymbol, label: "work image unavailable")
+                .accessibilityIdentifier("work.image.\(work.id)")
+        }
+    }
+
+    private var hasAsset: Bool {
+        UIImage(named: work.id) != nil
+    }
+
+    private var accessibilityLabel: String {
+        "Artwork image for \(work.title.value(for: contentStore.language))"
     }
 }
 
@@ -167,14 +240,7 @@ struct WorkRow: View {
     var body: some View {
         NavigationLink(value: AppRoute.workDetail(work.id)) {
             HStack(spacing: Spacing.medium) {
-                RoundedRectangle(cornerRadius: CornerRadiusToken.small, style: .continuous)
-                    .fill(AppColor.bronze.opacity(0.18))
-                    .frame(width: 48, height: 48)
-                    .overlay {
-                        Image(systemName: work.placeholderSymbol)
-                            .foregroundStyle(AppColor.bronze)
-                    }
-                    .accessibilityHidden(true)
+                WorkArtworkImage(work: work, style: .thumbnail)
                 VStack(alignment: .leading, spacing: Spacing.xxSmall) {
                     Text(work.title.value(for: contentStore.language))
                         .font(.headline)

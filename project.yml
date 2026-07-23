@@ -19,6 +19,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jctec.MuseeRodinCompanion
+        DEVELOPMENT_TEAM: S8662L649U
         INFOPLIST_FILE: MuseeRodinCompanion/Info.plist
         TARGETED_DEVICE_FAMILY: "1,2"
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor

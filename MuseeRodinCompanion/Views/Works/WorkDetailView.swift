@@ -14,7 +14,7 @@ struct WorkDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.large) {
-                PlaceholderPanel(symbol: work.placeholderSymbol, label: "personal photo or rights-cleared image")
+                WorkArtworkImage(work: work, style: .hero)
 
                 VStack(alignment: .leading, spacing: Spacing.small) {
                     HStack(alignment: .firstTextBaseline) {

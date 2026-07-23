@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: CI/CD documentation
+    url: https://github.com/JCTec/musee-rodin-companion-ios/blob/main/docs/ci-cd.md
+    about: Read the workflow and release-candidate artifact notes.
