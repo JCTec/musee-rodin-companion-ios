@@ -1,0 +1,20 @@
+enum A11yID {
+    static let placesView = "places.view"
+    static let worksView = "works.view"
+    static let pathsView = "paths.view"
+    static let searchView = "search.view"
+    static let notesView = "notes.view"
+    static let workDetailView = "workDetail.view"
+    static let pathDetailView = "pathDetail.view"
+    static let noteEditorView = "noteEditor.view"
+
+    static let worksSearchField = "works.searchField"
+    static let searchField = "search.field"
+    static let readAloudButton = "readAloud.button"
+    static let readAloudSpeedButton = "readAloud.speedButton"
+    static let favoriteButton = "work.favoriteButton"
+    static let seenButton = "work.seenButton"
+    static let addNoteButton = "note.addButton"
+    static let saveNoteButton = "note.saveButton"
+    static let deleteNoteButton = "note.deleteButton"
+}

@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F6845339A194AA52A9EC0E /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F52CB1195D53991A9AEDA9 /* NotesView.swift */; };
+		03EBAB39D28436D03A023285 /* ContentModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D3B4DE470BBC24F205B6C1 /* ContentModelTests.swift */; };
+		0729EEE5114532D9DEDC0BF8 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7099A673F0E717CF91A5C18 /* DesignTokens.swift */; };
+		0B56F38ABC4A54880D1AB536 /* sources.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D65F6837D557F0DA0C16CCE /* sources.json */; };
+		0CACE0FA81E1F78D3EEF5CCF /* AdditionalViewRobots.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55119DCA2AF3046A363F9D /* AdditionalViewRobots.swift */; };
+		0D7746828954E9CF6F00FCD3 /* MuseeRodinCompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCB2A8ED4B294B445A3C9F /* MuseeRodinCompanionUITests.swift */; };
+		2179B691501B7E78C50CFDD3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797C2E336D34B2824AF40CE /* SearchView.swift */; };
+		2C0FFDFFA300837354CB17C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE6C1DAE6BB92F12A466CF0A /* Assets.xcassets */; };
+		2C9062259081886430A07AEE /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9D0D9DF6A8E932B126197 /* PlacesView.swift */; };
+		360FC6C7DE05F39D9786F159 /* works.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF629514673A5B53C7382A1 /* works.json */; };
+		56F439BC38D5047D3AC54796 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF84954F27455720941E607 /* routes.json */; };
+		5824AE556AC7058AEDC5CA90 /* WorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF09BA7A9397C2877743985 /* WorksView.swift */; };
+		5FBB4300869E38EC6BCC20B7 /* WorkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C1F83790D6EECF17F7414 /* WorkDetailView.swift */; };
+		798B5EF9984723DB0BBCE5E6 /* PathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DCB8A47316B54B9F1EDB7C /* PathsView.swift */; };
+		7EA972EB4D2876994880EE46 /* WorksRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DEEC212D8A1A4E76E2238F /* WorksRobot.swift */; };
+		966B5A6C13E38C436C831718 /* topics.json in Resources */ = {isa = PBXBuildFile; fileRef = B891E98CA1C417EC341C4267 /* topics.json */; };
+		9C1B546202EC3CF87DB33C66 /* audio_stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C4D737111EF6E98F0C3C /* audio_stops.json */; };
+		9EE3C15A9A57F146D27E7B41 /* ContentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E19519A672616B1466B9C /* ContentModels.swift */; };
+		A197CDF0C86BFA57EB7585D7 /* DetailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF477DA63B21599ED06ED1B /* DetailViews.swift */; };
+		A22CBEC5A9A1B8ACAE38A961 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 11A092F05DE9448D189FEE76 /* Localizable.xcstrings */; };
+		A3AA4371712CF2FAE11A2746 /* AccessibilityIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D046AAECC76B65F74F8FD /* AccessibilityIDs.swift */; };
+		A4AFD369DE32A22A2BD0866A /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A38D46E703711579969C06 /* SearchService.swift */; };
+		ABD37EC1B6E25C3A154EBCF9 /* PathsRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892C4A005DE5451643B3C78E /* PathsRobot.swift */; };
+		BB229001B627487705150480 /* PlacesRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16911897DC2D48E851D0F53 /* PlacesRobot.swift */; };
+		C2EAEA18EF58D9597F213E9D /* BaseRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E4607A30AC61496ED6F93 /* BaseRobot.swift */; };
+		D2746FA325FD86045A621A36 /* WorkDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB2D10E8556D05FEDF282EA /* WorkDetailRobot.swift */; };
+		D9EDF5C2C02F13101A20E057 /* source_chunks.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DA4D0FA95C4FE73E95D467 /* source_chunks.json */; };
+		DAE9828464EB668392FEF7CE /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0575FC4C43820797172D0C4 /* AppRoute.swift */; };
+		EA91DC2426D0E67D40DC9D0E /* SharedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E2B9EE420F7CCA883634A /* SharedViews.swift */; };
+		ED147F4EB11DC90BC12DE570 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C94D05ACACD1251C1683104 /* RootView.swift */; };
+		EDDB801F51B4936A41A1038C /* AppContentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC1055FB4C3D549CDC1AF /* AppContentStore.swift */; };
+		EF1631628F8022DFD6D0D6FE /* NarrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7791750EBC6F5535FDB64 /* NarrationController.swift */; };
+		F547989493BF8EE99F2A1471 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB05C2B0F09B8556EB568E /* UserModels.swift */; };
+		FA2A812223BB52C1B29C4C2A /* MuseeRodinCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9838B97F618703C8918A080E /* MuseeRodinCompanionApp.swift */; };
+		FB460453EE4FCE159D9CFE06 /* ScreenshotCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A96BBED873F480CEF0C0C /* ScreenshotCaptureTests.swift */; };
+		FE5DFD325951B9FAADDA0A1E /* NotesRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3C71949590A9DDF99F571 /* NotesRobot.swift */; };
+		FE653ED6159B94C94A060C5C /* SearchRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F158786E25BF48C6382264 /* SearchRobot.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E61EF15EAA48FD4446C041B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C743CBD887D413641986952E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DC8DFB96BE17C95238555A;
+			remoteInfo = MuseeRodinCompanion;
+		};
+		5AEDF00ECC47EC92ECC378BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C743CBD887D413641986952E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DC8DFB96BE17C95238555A;
+			remoteInfo = MuseeRodinCompanion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01A38D46E703711579969C06 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		09CCB2A8ED4B294B445A3C9F /* MuseeRodinCompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseeRodinCompanionUITests.swift; sourceTree = "<group>"; };
+		0FF84954F27455720941E607 /* routes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
+		11A092F05DE9448D189FEE76 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		15E3C71949590A9DDF99F571 /* NotesRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRobot.swift; sourceTree = "<group>"; };
+		18DA4D0FA95C4FE73E95D467 /* source_chunks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = source_chunks.json; sourceTree = "<group>"; };
+		19F158786E25BF48C6382264 /* SearchRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRobot.swift; sourceTree = "<group>"; };
+		28DCB8A47316B54B9F1EDB7C /* PathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsView.swift; sourceTree = "<group>"; };
+		2C7E2B9EE420F7CCA883634A /* SharedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViews.swift; sourceTree = "<group>"; };
+		37E2C4D737111EF6E98F0C3C /* audio_stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audio_stops.json; sourceTree = "<group>"; };
+		3CF629514673A5B53C7382A1 /* works.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = works.json; sourceTree = "<group>"; };
+		3D65F6837D557F0DA0C16CCE /* sources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sources.json; sourceTree = "<group>"; };
+		42F7791750EBC6F5535FDB64 /* NarrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrationController.swift; sourceTree = "<group>"; };
+		4BC9D0D9DF6A8E932B126197 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		4C94D05ACACD1251C1683104 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5B4ACE436005E6FD5EEC927E /* MuseeRodinCompanionTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MuseeRodinCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F0E4607A30AC61496ED6F93 /* BaseRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRobot.swift; sourceTree = "<group>"; };
+		788EC714E5D1EC7C4B6E33BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		78F52CB1195D53991A9AEDA9 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		892C4A005DE5451643B3C78E /* PathsRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsRobot.swift; sourceTree = "<group>"; };
+		8A3D7F28B8B16C5DC1EC0BFE /* MuseeRodinCompanion.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MuseeRodinCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6A96BBED873F480CEF0C0C /* ScreenshotCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCaptureTests.swift; sourceTree = "<group>"; };
+		91D3B4DE470BBC24F205B6C1 /* ContentModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModelTests.swift; sourceTree = "<group>"; };
+		9838B97F618703C8918A080E /* MuseeRodinCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseeRodinCompanionApp.swift; sourceTree = "<group>"; };
+		9FDB05C2B0F09B8556EB568E /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		B891E98CA1C417EC341C4267 /* topics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = topics.json; sourceTree = "<group>"; };
+		BC55119DCA2AF3046A363F9D /* AdditionalViewRobots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalViewRobots.swift; sourceTree = "<group>"; };
+		BE3C1F83790D6EECF17F7414 /* WorkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailView.swift; sourceTree = "<group>"; };
+		BEF09BA7A9397C2877743985 /* WorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksView.swift; sourceTree = "<group>"; };
+		C16911897DC2D48E851D0F53 /* PlacesRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRobot.swift; sourceTree = "<group>"; };
+		C7099A673F0E717CF91A5C18 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		CE8CC1055FB4C3D549CDC1AF /* AppContentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentStore.swift; sourceTree = "<group>"; };
+		D0575FC4C43820797172D0C4 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		D41E19519A672616B1466B9C /* ContentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModels.swift; sourceTree = "<group>"; };
+		D797C2E336D34B2824AF40CE /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D7DEEC212D8A1A4E76E2238F /* WorksRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksRobot.swift; sourceTree = "<group>"; };
+		D87E9462260B1995950D7801 /* MuseeRodinCompanionUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MuseeRodinCompanionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF3D046AAECC76B65F74F8FD /* AccessibilityIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIDs.swift; sourceTree = "<group>"; };
+		EE6C1DAE6BB92F12A466CF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCF477DA63B21599ED06ED1B /* DetailViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViews.swift; sourceTree = "<group>"; };
+		FEB2D10E8556D05FEDF282EA /* WorkDetailRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailRobot.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0850455EEECF7C97E99BFF4D /* MuseeRodinCompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				91D3B4DE470BBC24F205B6C1 /* ContentModelTests.swift */,
+			);
+			name = MuseeRodinCompanionTests;
+			path = Tests/MuseeRodinCompanionTests;
+			sourceTree = "<group>";
+		};
+		09CE58272B3CBD62EBA1C83E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FCF477DA63B21599ED06ED1B /* DetailViews.swift */,
+				2C7E2B9EE420F7CCA883634A /* SharedViews.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0D74BFD05B11081A5563EF63 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				4BC9D0D9DF6A8E932B126197 /* PlacesView.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		252B77408E5FA1BBDE088935 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				37E2C4D737111EF6E98F0C3C /* audio_stops.json */,
+				0FF84954F27455720941E607 /* routes.json */,
+				18DA4D0FA95C4FE73E95D467 /* source_chunks.json */,
+				3D65F6837D557F0DA0C16CCE /* sources.json */,
+				B891E98CA1C417EC341C4267 /* topics.json */,
+				3CF629514673A5B53C7382A1 /* works.json */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		29A90E44FE6432DD7CBE5520 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D0575FC4C43820797172D0C4 /* AppRoute.swift */,
+				9838B97F618703C8918A080E /* MuseeRodinCompanionApp.swift */,
+				4C94D05ACACD1251C1683104 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		50ECE6CF96A0E9EFEC44FD8F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				78F52CB1195D53991A9AEDA9 /* NotesView.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		6916C3749AC63A5DB1996E30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50ECE6CF96A0E9EFEC44FD8F /* Notes */,
+				DF8B3B247AE54F2FCBDF383D /* Paths */,
+				0D74BFD05B11081A5563EF63 /* Places */,
+				B012560C77DE9913DCD2A102 /* Search */,
+				09CE58272B3CBD62EBA1C83E /* Shared */,
+				AD7F8716BFFF53FABEE53E73 /* Works */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7FEDB3FDA4F8D5958421EFF0 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				C7099A673F0E717CF91A5C18 /* DesignTokens.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		84D3F319D10C3664FACC7778 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DF3D046AAECC76B65F74F8FD /* AccessibilityIDs.swift */,
+				CE8CC1055FB4C3D549CDC1AF /* AppContentStore.swift */,
+				42F7791750EBC6F5535FDB64 /* NarrationController.swift */,
+				01A38D46E703711579969C06 /* SearchService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8E98517E9DC9A1C464195000 /* MuseeRodinCompanion */ = {
+			isa = PBXGroup;
+			children = (
+				29A90E44FE6432DD7CBE5520 /* App */,
+				84D3F319D10C3664FACC7778 /* Data */,
+				7FEDB3FDA4F8D5958421EFF0 /* DesignSystem */,
+				EF99BEDF0EACACB055131C02 /* Models */,
+				98C40BE77C30A01C13FC6BF2 /* Resources */,
+				6916C3749AC63A5DB1996E30 /* Views */,
+				788EC714E5D1EC7C4B6E33BB /* Info.plist */,
+			);
+			path = MuseeRodinCompanion;
+			sourceTree = "<group>";
+		};
+		98C40BE77C30A01C13FC6BF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				252B77408E5FA1BBDE088935 /* Content */,
+				EE6C1DAE6BB92F12A466CF0A /* Assets.xcassets */,
+				11A092F05DE9448D189FEE76 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD7F8716BFFF53FABEE53E73 /* Works */ = {
+			isa = PBXGroup;
+			children = (
+				BE3C1F83790D6EECF17F7414 /* WorkDetailView.swift */,
+				BEF09BA7A9397C2877743985 /* WorksView.swift */,
+			);
+			path = Works;
+			sourceTree = "<group>";
+		};
+		B012560C77DE9913DCD2A102 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D797C2E336D34B2824AF40CE /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BD1FDE88BE1DB080B63F5036 /* MuseeRodinCompanionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C25F38198D3FD0E4E8825F35 /* Robots */,
+				09CCB2A8ED4B294B445A3C9F /* MuseeRodinCompanionUITests.swift */,
+				8B6A96BBED873F480CEF0C0C /* ScreenshotCaptureTests.swift */,
+			);
+			name = MuseeRodinCompanionUITests;
+			path = Tests/MuseeRodinCompanionUITests;
+			sourceTree = "<group>";
+		};
+		C25F38198D3FD0E4E8825F35 /* Robots */ = {
+			isa = PBXGroup;
+			children = (
+				BC55119DCA2AF3046A363F9D /* AdditionalViewRobots.swift */,
+				5F0E4607A30AC61496ED6F93 /* BaseRobot.swift */,
+				15E3C71949590A9DDF99F571 /* NotesRobot.swift */,
+				892C4A005DE5451643B3C78E /* PathsRobot.swift */,
+				C16911897DC2D48E851D0F53 /* PlacesRobot.swift */,
+				19F158786E25BF48C6382264 /* SearchRobot.swift */,
+				FEB2D10E8556D05FEDF282EA /* WorkDetailRobot.swift */,
+				D7DEEC212D8A1A4E76E2238F /* WorksRobot.swift */,
+			);
+			path = Robots;
+			sourceTree = "<group>";
+		};
+		D2ED1B12A9CA9293CC745716 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3D7F28B8B16C5DC1EC0BFE /* MuseeRodinCompanion.app */,
+				5B4ACE436005E6FD5EEC927E /* MuseeRodinCompanionTests.xctest */,
+				D87E9462260B1995950D7801 /* MuseeRodinCompanionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF8B3B247AE54F2FCBDF383D /* Paths */ = {
+			isa = PBXGroup;
+			children = (
+				28DCB8A47316B54B9F1EDB7C /* PathsView.swift */,
+			);
+			path = Paths;
+			sourceTree = "<group>";
+		};
+		E37A4074D476D35A7247B0A7 = {
+			isa = PBXGroup;
+			children = (
+				8E98517E9DC9A1C464195000 /* MuseeRodinCompanion */,
+				0850455EEECF7C97E99BFF4D /* MuseeRodinCompanionTests */,
+				BD1FDE88BE1DB080B63F5036 /* MuseeRodinCompanionUITests */,
+				D2ED1B12A9CA9293CC745716 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF99BEDF0EACACB055131C02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D41E19519A672616B1466B9C /* ContentModels.swift */,
+				9FDB05C2B0F09B8556EB568E /* UserModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12E4E3503986FD00A3FA1354 /* MuseeRodinCompanionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8CA96D4A88D80C172125BA /* Build configuration list for PBXNativeTarget "MuseeRodinCompanionTests" */;
+			buildPhases = (
+				FE002D73B7F57E1948AB6537 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EEEE50172A7F1AC3FBE242A /* PBXTargetDependency */,
+			);
+			name = MuseeRodinCompanionTests;
+			packageProductDependencies = (
+			);
+			productName = MuseeRodinCompanionTests;
+			productReference = 5B4ACE436005E6FD5EEC927E /* MuseeRodinCompanionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49DC8DFB96BE17C95238555A /* MuseeRodinCompanion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7555B231A78487A4FEDD354 /* Build configuration list for PBXNativeTarget "MuseeRodinCompanion" */;
+			buildPhases = (
+				15FD98ECBFC98900A3A586E4 /* Sources */,
+				70EC0DD2905B5813B1B2B886 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuseeRodinCompanion;
+			packageProductDependencies = (
+			);
+			productName = MuseeRodinCompanion;
+			productReference = 8A3D7F28B8B16C5DC1EC0BFE /* MuseeRodinCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFF06135A3E8B23FF904D527 /* MuseeRodinCompanionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C2A6E81832CF8BBDF9735AB /* Build configuration list for PBXNativeTarget "MuseeRodinCompanionUITests" */;
+			buildPhases = (
+				B410495A6A4E44B7E7D3CFCF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8568563EA28BB332BEC954E8 /* PBXTargetDependency */,
+			);
+			name = MuseeRodinCompanionUITests;
+			packageProductDependencies = (
+			);
+			productName = MuseeRodinCompanionUITests;
+			productReference = D87E9462260B1995950D7801 /* MuseeRodinCompanionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C743CBD887D413641986952E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					BFF06135A3E8B23FF904D527 = {
+						TestTargetID = 49DC8DFB96BE17C95238555A;
+					};
+				};
+			};
+			buildConfigurationList = A9448D4CB8C572CE57DB8536 /* Build configuration list for PBXProject "MuseeRodinCompanion" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+				fr,
+			);
+			mainGroup = E37A4074D476D35A7247B0A7;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D2ED1B12A9CA9293CC745716 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49DC8DFB96BE17C95238555A /* MuseeRodinCompanion */,
+				12E4E3503986FD00A3FA1354 /* MuseeRodinCompanionTests */,
+				BFF06135A3E8B23FF904D527 /* MuseeRodinCompanionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70EC0DD2905B5813B1B2B886 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C0FFDFFA300837354CB17C7 /* Assets.xcassets in Resources */,
+				A22CBEC5A9A1B8ACAE38A961 /* Localizable.xcstrings in Resources */,
+				9C1B546202EC3CF87DB33C66 /* audio_stops.json in Resources */,
+				56F439BC38D5047D3AC54796 /* routes.json in Resources */,
+				D9EDF5C2C02F13101A20E057 /* source_chunks.json in Resources */,
+				0B56F38ABC4A54880D1AB536 /* sources.json in Resources */,
+				966B5A6C13E38C436C831718 /* topics.json in Resources */,
+				360FC6C7DE05F39D9786F159 /* works.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15FD98ECBFC98900A3A586E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3AA4371712CF2FAE11A2746 /* AccessibilityIDs.swift in Sources */,
+				EDDB801F51B4936A41A1038C /* AppContentStore.swift in Sources */,
+				DAE9828464EB668392FEF7CE /* AppRoute.swift in Sources */,
+				9EE3C15A9A57F146D27E7B41 /* ContentModels.swift in Sources */,
+				0729EEE5114532D9DEDC0BF8 /* DesignTokens.swift in Sources */,
+				A197CDF0C86BFA57EB7585D7 /* DetailViews.swift in Sources */,
+				FA2A812223BB52C1B29C4C2A /* MuseeRodinCompanionApp.swift in Sources */,
+				EF1631628F8022DFD6D0D6FE /* NarrationController.swift in Sources */,
+				00F6845339A194AA52A9EC0E /* NotesView.swift in Sources */,
+				798B5EF9984723DB0BBCE5E6 /* PathsView.swift in Sources */,
+				2C9062259081886430A07AEE /* PlacesView.swift in Sources */,
+				ED147F4EB11DC90BC12DE570 /* RootView.swift in Sources */,
+				A4AFD369DE32A22A2BD0866A /* SearchService.swift in Sources */,
+				2179B691501B7E78C50CFDD3 /* SearchView.swift in Sources */,
+				EA91DC2426D0E67D40DC9D0E /* SharedViews.swift in Sources */,
+				F547989493BF8EE99F2A1471 /* UserModels.swift in Sources */,
+				5FBB4300869E38EC6BCC20B7 /* WorkDetailView.swift in Sources */,
+				5824AE556AC7058AEDC5CA90 /* WorksView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B410495A6A4E44B7E7D3CFCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CACE0FA81E1F78D3EEF5CCF /* AdditionalViewRobots.swift in Sources */,
+				C2EAEA18EF58D9597F213E9D /* BaseRobot.swift in Sources */,
+				0D7746828954E9CF6F00FCD3 /* MuseeRodinCompanionUITests.swift in Sources */,
+				FE5DFD325951B9FAADDA0A1E /* NotesRobot.swift in Sources */,
+				ABD37EC1B6E25C3A154EBCF9 /* PathsRobot.swift in Sources */,
+				BB229001B627487705150480 /* PlacesRobot.swift in Sources */,
+				FB460453EE4FCE159D9CFE06 /* ScreenshotCaptureTests.swift in Sources */,
+				FE653ED6159B94C94A060C5C /* SearchRobot.swift in Sources */,
+				D2746FA325FD86045A621A36 /* WorkDetailRobot.swift in Sources */,
+				7EA972EB4D2876994880EE46 /* WorksRobot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE002D73B7F57E1948AB6537 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EBAB39D28436D03A023285 /* ContentModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EEEE50172A7F1AC3FBE242A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DC8DFB96BE17C95238555A /* MuseeRodinCompanion */;
+			targetProxy = 5AEDF00ECC47EC92ECC378BC /* PBXContainerItemProxy */;
+		};
+		8568563EA28BB332BEC954E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DC8DFB96BE17C95238555A /* MuseeRodinCompanion */;
+			targetProxy = 4E61EF15EAA48FD4446C041B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5999CA6CD8F2E7D1F3733477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanionTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseeRodinCompanion.app/MuseeRodinCompanion";
+			};
+			name = Release;
+		};
+		60A9ECD4E31A9CC8464C30EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MuseeRodinCompanion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanion;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83D3BDD5475AE9087B760477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanionUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuseeRodinCompanion;
+			};
+			name = Debug;
+		};
+		A8254D3F1171692B413EFFC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanionUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuseeRodinCompanion;
+			};
+			name = Release;
+		};
+		B1FD9A5D258D795E2519388F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C7451335BFC596DE74C0A8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MuseeRodinCompanion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanion;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E98493D3D06E1475F96C4E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FD662D534CC1409EF7D0C2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jctec.MuseeRodinCompanionTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseeRodinCompanion.app/MuseeRodinCompanion";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F8CA96D4A88D80C172125BA /* Build configuration list for PBXNativeTarget "MuseeRodinCompanionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD662D534CC1409EF7D0C2D9 /* Debug */,
+				5999CA6CD8F2E7D1F3733477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8C2A6E81832CF8BBDF9735AB /* Build configuration list for PBXNativeTarget "MuseeRodinCompanionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D3BDD5475AE9087B760477 /* Debug */,
+				A8254D3F1171692B413EFFC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A9448D4CB8C572CE57DB8536 /* Build configuration list for PBXProject "MuseeRodinCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E98493D3D06E1475F96C4E73 /* Debug */,
+				B1FD9A5D258D795E2519388F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F7555B231A78487A4FEDD354 /* Build configuration list for PBXNativeTarget "MuseeRodinCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7451335BFC596DE74C0A8D5 /* Debug */,
+				60A9ECD4E31A9CC8464C30EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C743CBD887D413641986952E /* Project object */;
+}

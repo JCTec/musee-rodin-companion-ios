@@ -1,0 +1,21 @@
+.DS_Store
+
+# Xcode local state
+build/
+DerivedData/
+*.xcresult
+*.xcuserstate
+*.xcuserdata/
+xcuserdata/
+MuseeRodinCompanion.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Generated outputs kept outside source control
+artifacts/
+downloaded-assets/
+population-output/
+research/
+
+# SwiftPM/Xcode transient data
+.build/
+Package.resolved
+
