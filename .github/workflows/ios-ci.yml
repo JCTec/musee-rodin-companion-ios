@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Validate bundled content
         run: python3 tools/validate_content.py MuseeRodinCompanion/Resources/Content
@@ -30,7 +30,7 @@ jobs:
     runs-on: macos-26
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -52,7 +52,7 @@ jobs:
       RESULT_BUNDLE_PATH: artifacts/unit-tests/MuseeRodinCompanionTests.xcresult
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Show Xcode version
         run: xcodebuild -version
