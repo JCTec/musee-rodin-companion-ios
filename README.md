@@ -14,6 +14,26 @@ Personal iOS/iPadOS companion app for exploring Musée Rodin places, works, symb
 - `tools/` - validation, content-merge, and screenshot capture scripts.
 - `docs/` - schema, verification, design, and workspace notes.
 
+## Shared Assets
+
+The parent workspace has a canonical local asset package in `../shared-assets/`. It contains the app content JSON, artwork source images, iOS app icon, color sets, and localization file.
+
+Rebuild managed iOS resources from the workspace root package when resources are missing or stale:
+
+```sh
+python3 ../tools/sync_app_assets.py --target ios --write
+```
+
+Use `--dry-run` to preview changes and `--check` to fail when the iOS resources differ from `../shared-assets/`.
+
+When both platform projects should be refreshed from the same source package, run from the workspace root:
+
+```sh
+python3 tools/sync_app_assets.py --target all --write
+```
+
+Generated iOS resources are still checked into this repo so remote GitHub CI remains self-contained. If they are untracked later, CI will need access to `../shared-assets/` or a packaging step that restores it before build.
+
 ## Common Commands
 
 Validate bundled content:
