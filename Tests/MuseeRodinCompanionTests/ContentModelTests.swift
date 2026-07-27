@@ -6,8 +6,8 @@ final class ContentModelTests: XCTestCase {
     func testPopulatedContentDecodesForAllLanguages() throws {
         let content = try ContentRepository.load(from: .main)
 
-        XCTAssertEqual(content.works.count, 18)
-        XCTAssertEqual(content.sources.count, 47)
+        XCTAssertEqual(content.works.count, 31)
+        XCTAssertEqual(content.sources.count, 60)
         XCTAssertEqual(content.sourceChunks.count, 28)
         XCTAssertEqual(content.topics.count, 16)
         XCTAssertEqual(content.routes.count, 12)
