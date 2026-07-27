@@ -8,13 +8,16 @@ struct WorkDetailView: View {
     @Query private var favorites: [FavoriteRecord]
     @Query private var seenRecords: [SeenRecord]
     @State private var showingNoteEditor = false
+    @State private var showingFullScreenArtwork = false
 
     var work: Work
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.large) {
-                WorkArtworkImage(work: work, style: .hero)
+                WorkArtworkImage(work: work, style: .hero) {
+                    showingFullScreenArtwork = true
+                }
 
                 VStack(alignment: .leading, spacing: Spacing.small) {
                     HStack(alignment: .firstTextBaseline) {
@@ -79,6 +82,10 @@ struct WorkDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingNoteEditor) {
             NoteEditorView(linkedKind: .work, linkedID: work.id, suggestedTitle: work.title.value(for: contentStore.language))
+        }
+        .fullScreenCover(isPresented: $showingFullScreenArtwork) {
+            FullScreenArtworkView(work: work)
+                .environmentObject(contentStore)
         }
         .accessibilityIdentifier(A11yID.workDetailView)
     }

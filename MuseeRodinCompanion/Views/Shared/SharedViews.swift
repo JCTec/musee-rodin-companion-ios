@@ -36,6 +36,7 @@ struct WorkArtworkImage: View {
     @EnvironmentObject private var contentStore: AppContentStore
     var work: Work
     var style: WorkArtworkStyle
+    var onOpenFullScreen: (() -> Void)? = nil
 
     var body: some View {
         switch style {
@@ -70,24 +71,41 @@ struct WorkArtworkImage: View {
     @ViewBuilder
     private var hero: some View {
         if hasAsset {
-            ZStack {
-                RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous)
-                    .fill(AppColor.card)
-                Image(work.id)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(Spacing.small)
+            if let onOpenFullScreen {
+                Button {
+                    AppHaptics.secondary()
+                    onOpenFullScreen()
+                } label: {
+                    heroArtwork
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Open full screen image for \(work.title.value(for: contentStore.language))")
+                .accessibilityHint("Shows the artwork image full screen")
+                .accessibilityIdentifier("work.image.\(work.id)")
+            } else {
+                heroArtwork
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityIdentifier("work.image.\(work.id)")
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 300)
-            .clipShape(RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous))
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityIdentifier("work.image.\(work.id)")
         } else {
             PlaceholderPanel(symbol: work.placeholderSymbol, label: "work image unavailable")
                 .accessibilityIdentifier("work.image.\(work.id)")
         }
+    }
+
+    private var heroArtwork: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous)
+                .fill(AppColor.card)
+            Image(work.id)
+                .resizable()
+                .scaledToFit()
+                .padding(Spacing.small)
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 300)
+        .clipShape(RoundedRectangle(cornerRadius: CornerRadiusToken.medium, style: .continuous))
     }
 
     private var hasAsset: Bool {
@@ -96,6 +114,68 @@ struct WorkArtworkImage: View {
 
     private var accessibilityLabel: String {
         "Artwork image for \(work.title.value(for: contentStore.language))"
+    }
+}
+
+struct FullScreenArtworkView: View {
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var contentStore: AppContentStore
+    var work: Work
+
+    var body: some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+
+            VStack(spacing: Spacing.medium) {
+                Spacer(minLength: Spacing.large)
+
+                Image(work.id)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal, Spacing.medium)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(accessibilityLabel)
+                    .accessibilityIdentifier("work.fullScreenImage.image.\(work.id)")
+
+                Text(work.title.value(for: contentStore.language))
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, Spacing.large)
+                    .accessibilityIdentifier("work.fullScreenImage.title.\(work.id)")
+
+                Text("\(work.artist) - \(work.dateText)")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.72))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, Spacing.large)
+
+                Spacer(minLength: Spacing.large)
+            }
+        }
+        .safeAreaInset(edge: .top) {
+            HStack {
+                Spacer()
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.headline.weight(.semibold))
+                        .frame(width: 48, height: 48)
+                        .foregroundStyle(.white)
+                        .background(.ultraThinMaterial, in: Circle())
+                }
+                .accessibilityLabel("Close full screen image")
+                .accessibilityIdentifier("work.fullScreenImage.closeButton")
+            }
+            .padding(.horizontal, Spacing.medium)
+            .padding(.top, Spacing.xSmall)
+        }
+    }
+
+    private var accessibilityLabel: String {
+        "Full screen artwork image for \(work.title.value(for: contentStore.language))"
     }
 }
 

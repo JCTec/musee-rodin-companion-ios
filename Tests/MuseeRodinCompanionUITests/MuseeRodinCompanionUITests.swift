@@ -125,6 +125,11 @@ final class MuseeRodinCompanionUITests: XCTestCase {
         WorkArtworkImageRobot(app: app)
             .assertVisible(id: "work-le-penseur")
             .assertA11yReady(id: "work-le-penseur")
+            .openFullScreen(id: "work-le-penseur")
+            .assertVisible(id: "work-le-penseur")
+            .assertA11yReady(id: "work-le-penseur")
+            .close()
+
         ConfidenceChipRobot(app: app)
             .assertVisible(label: "Verified")
             .assertA11yReady(label: "Verified")

@@ -31,15 +31,48 @@ final class PlaceholderPanelRobot: BaseRobot {
 final class WorkArtworkImageRobot: BaseRobot {
     @discardableResult
     func assertVisible(id: String) -> Self {
-        XCTAssertTrue(app.descendants(matching: .any)["work.image.\(id)"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["work.image.\(id)"].waitForExistence(timeout: 5) || app.descendants(matching: .any)["work.image.\(id)"].waitForExistence(timeout: 5))
         return self
     }
 
     @discardableResult
     func assertA11yReady(id: String) -> Self {
-        let image = app.descendants(matching: .any)["work.image.\(id)"]
+        let image = app.buttons["work.image.\(id)"].exists ? app.buttons["work.image.\(id)"] : app.descendants(matching: .any)["work.image.\(id)"]
         XCTAssertTrue(image.exists)
         XCTAssertFalse(image.label.isEmpty)
+        return self
+    }
+
+    func openFullScreen(id: String) -> FullScreenArtworkRobot {
+        app.swipeDown()
+        app.buttons["work.image.\(id)"].tap()
+        return FullScreenArtworkRobot(app: app)
+    }
+}
+
+final class FullScreenArtworkRobot: BaseRobot {
+    @discardableResult
+    func assertVisible(id: String) -> Self {
+        let closeButton = app.buttons["work.fullScreenImage.closeButton"]
+        XCTAssertTrue(closeButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["work.fullScreenImage.image.\(id)"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["work.fullScreenImage.title.\(id)"].exists)
+        return self
+    }
+
+    @discardableResult
+    func assertA11yReady(id: String) -> Self {
+        let closeButton = app.buttons["work.fullScreenImage.closeButton"]
+        XCTAssertTrue(closeButton.exists)
+        XCTAssertFalse(closeButton.label.isEmpty)
+        XCTAssertTrue(app.descendants(matching: .any)["work.fullScreenImage.image.\(id)"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["work.fullScreenImage.title.\(id)"].exists)
+        return self
+    }
+
+    @discardableResult
+    func close() -> Self {
+        app.buttons["work.fullScreenImage.closeButton"].tap()
         return self
     }
 }
